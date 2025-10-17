@@ -1,6 +1,5 @@
 package tw.fengqing.spring.springbucks.waiter.controller;
 
-import tw.fengqing.spring.springbucks.waiter.controller.exception.FormValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 @Getter
+@AllArgsConstructor
 public class FormValidationException extends RuntimeException {
     private final BindingResult result;
-
-    public FormValidationException(BindingResult result) {
-        this.result = result;
-    }
 }

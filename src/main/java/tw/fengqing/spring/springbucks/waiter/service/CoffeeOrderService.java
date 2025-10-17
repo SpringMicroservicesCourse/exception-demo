@@ -20,7 +20,7 @@ public class CoffeeOrderService {
     private CoffeeOrderRepository orderRepository;
 
     public CoffeeOrder get(Long id) {
-        return orderRepository.getOne(id);
+        return orderRepository.getReferenceById(id);
     }
 
     public CoffeeOrder createOrder(String customer, Coffee...coffee) {

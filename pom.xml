@@ -6,23 +6,17 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>tw.fengqing.spring.springbucks.waiter</groupId>
-	<artifactId>waiter-service</artifactId>
+	<artifactId>exception-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>waiter-service</name>
+	<name>exception-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>21</java.version>
 		<joda-money.version>2.0.2</joda-money.version>	
-		<commons-lang3.version>3.17.0</commons-lang3.version>
-		<hibernate6.version>2.19.1</hibernate6.version>
-		<jackson-dataformat-xml.version>2.19.1</jackson-dataformat-xml.version>
-		<jakarta.persistence.version>3.1.0</jakarta.persistence.version>
-		<jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
-		<hibernate-validator.version>7.0.5.Final</hibernate-validator.version>
 	</properties>
 
 	<dependencies>
@@ -38,30 +32,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.joda</groupId>
 			<artifactId>joda-money</artifactId>
-			<version>${joda-money.version}</version>
 		</dependency>
-		
-		<!-- 移除 hibernate5/jackson 相關依賴，保留 hibernate6 及 xml 支援 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-hibernate6</artifactId>
-			<version>${hibernate6.version}</version>
 		</dependency>
-		<!-- 增加Jackson XML支持 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>${jackson-dataformat-xml.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>${commons-lang3.version}</version>
 		</dependency>
 
 		<dependency>
@@ -80,21 +65,20 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>jakarta.persistence</groupId>
-			<artifactId>jakarta.persistence-api</artifactId>
-			<version>${jakarta.persistence.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.validation</groupId>
-			<artifactId>jakarta.validation-api</artifactId>
-			<version>${jakarta.validation-api.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate-validator.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.joda</groupId>
+				<artifactId>joda-money</artifactId>
+				<version>${joda-money.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
